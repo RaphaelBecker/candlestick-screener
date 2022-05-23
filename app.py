@@ -31,7 +31,7 @@ def index():
     sma100_rule = request.args.get('sma100_rule', False)
     sma150_rule = request.args.get('sma150_rule', False)
     sma200_rule = request.args.get('sma200_rule', False)
-    print(f"pattern: {pattern} sma20_rule: {sma20_rule}")
+
     stocks = {}
 
     with open('datasets/symbols.csv') as f:
