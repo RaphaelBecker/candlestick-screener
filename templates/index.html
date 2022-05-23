@@ -8,12 +8,47 @@
     </style>
 </head>
 <body>
-    <h1>Technical Scanner</h1>
+    <h1>Technical Stock Screener</h1>
     <form>
         <select name="pattern">
-            <option value="">-- Select a Pattern --</option>
+            <option value="">-- Any candlestick --</option>
             {% for key in candlestick_patterns %}
                 <option value="{{ key }}" {% if pattern == key %}selected="selected"{% endif %}>{{ candlestick_patterns[key] }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="sma20_rule">
+            <option value="">-- Any MA20 rule --</option>
+             {% for key in sma20_rules %}
+                <option value="{{ key }}" {% if sma20_rule == key %}selected="selected"{% endif %}>{{ sma20_rules[key] }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="sma50_rule">
+            <option value="">-- Any MA50 rule --</option>
+             {% for key in sma50_rules %}
+                <option value="{{ key }}" {% if sma50_rule == key %}selected="selected"{% endif %}>{{ sma50_rules[key] }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="sma100_rule">
+            <option value="">-- Any MA100 rule --</option>
+             {% for key in sma100_rules %}
+                <option value="{{ key }}" {% if sma100_rule == key %}selected="selected"{% endif %}>{{ sma100_rules[key] }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="sma150_rule">
+            <option value="">-- Any MA150 rule --</option>
+             {% for key in sma150_rules %}
+                <option value="{{ key }}" {% if sma150_rule == key %}selected="selected"{% endif %}>{{ sma150_rules[key] }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="sma200_rule">
+            <option value="">-- Any MA200 rule --</option>
+             {% for key in sma200_rules %}
+                <option value="{{ key }}" {% if sma200_rule == key %}selected="selected"{% endif %}>{{ sma200_rules[key] }}</option>
             {% endfor %}
         </select>
 

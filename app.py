@@ -5,6 +5,7 @@ import pandas
 import utils.helpers as hlps
 from flask import Flask, escape, request, render_template
 from patterns import candlestick_patterns
+from ma_rules import sma20_rules, sma50_rules, sma100_rules, sma150_rules, sma200_rules
 
 app = Flask(__name__)
 
@@ -25,6 +26,12 @@ def snapshot():
 @app.route('/')
 def index():
     pattern  = request.args.get('pattern', False)
+    sma20_rule = request.args.get('sma20_rule', False)
+    sma50_rule = request.args.get('sma50_rule', False)
+    sma100_rule = request.args.get('sma100_rule', False)
+    sma150_rule = request.args.get('sma150_rule', False)
+    sma200_rule = request.args.get('sma200_rule', False)
+    print(f"pattern: {pattern} sma20_rule: {sma20_rule}")
     stocks = {}
 
     with open('datasets/symbols.csv') as f:
@@ -50,4 +57,11 @@ def index():
             except Exception as e:
                 print('failed on filename: ', filename)
 
-    return render_template('index.html', candlestick_patterns=candlestick_patterns, stocks=stocks, pattern=pattern)
+    return render_template('index.html',
+                           candlestick_patterns=candlestick_patterns, pattern=pattern,
+                           sma20_rules=sma20_rules, sma20_rule=sma20_rule,
+                           sma50_rules=sma50_rules, sma50_rule=sma50_rule,
+                           sma100_rules=sma100_rules, sma100_rule=sma100_rule,
+                           sma150_rules=sma150_rules, sma150_rule=sma150_rule,
+                           sma200_rules=sma200_rules, sma200_rule=sma200_rule,
+                           stocks=stocks)
