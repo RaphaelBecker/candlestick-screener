@@ -14,6 +14,12 @@ web-based technical screener for candlestick patterns using TA-Lib, Python, and 
 ### Enable development mode (debug and auto-reload) on Windows
  * ```set FLASK_ENV=development``` before ```flask run```
 
+### Javascript charting modules reseach:
+ * https://www.dojichart.com/demo/indicators
+   * drawdown: not maintained any more
+ * https://github.com/rrag/react-stockcharts
+   * drawdown: forced to use react
+
 ## Video Tutorials for this repository:
 * Candlestick Pattern Recognition - https://www.youtube.com/watch?v=QGkf2-caXmc
 * Building a Web-based Technical Screener - https://www.youtube.com/watch?v=OhvQN_yIgCo
